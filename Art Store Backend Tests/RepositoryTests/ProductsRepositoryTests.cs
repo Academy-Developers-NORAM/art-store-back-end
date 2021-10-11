@@ -2,7 +2,7 @@ using NUnit.Framework;
 
 namespace Art_Store_Backend_Tests
 {
-    public class Tests
+    public class ProductsRepositoryTests
     {
         [SetUp]
         public void Setup()

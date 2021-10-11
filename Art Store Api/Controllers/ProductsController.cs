@@ -15,17 +15,17 @@ namespace ArtStoreBackend.Controllers
     [EnableCors("localhost")]
     public class ProductsController : ControllerBase
     {
-        private readonly IProductRepository productRepository;
-        public ProductsController(IProductRepository productRepository)
+        private readonly IProductsRepository productsRepository;
+        public ProductsController(IProductsRepository productsRepository)
         {
-            this.productRepository = productRepository;
+            this.productsRepository = productsRepository;
         }
 
 
         [HttpGet]
         public ActionResult<List<Product>> GetAllProducts()
         {
-            return Ok(productRepository.getAllProducts());
+            return Ok(productsRepository.getAllProducts());
         }
     }
 }

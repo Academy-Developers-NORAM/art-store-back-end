@@ -33,7 +33,7 @@ namespace ArtStoreBackend
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Art_Store_Backend", Version = "v1" });
             });
-            services.AddSingleton<IProductRepository, ProductRepository>();
+            services.AddSingleton<IProductsRepository, ProductsRepository>();
             services.AddCors(options =>
             {
                 options.AddPolicy("localhost",

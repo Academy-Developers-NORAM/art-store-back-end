@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace ArtStoreBackend.Repositories
 {
-    public interface IProductRepository
+    public interface IProductsRepository
     {
         List<Product> getAllProducts();
         void add(Product product);
     }
 
-    public class ProductRepository : IProductRepository
+    public class ProductsRepository : IProductsRepository
     {
         private List<Product> listOfProducts = new List<Product>();
 
-        public ProductRepository()
+        public ProductsRepository()
         {
             listOfProducts.Add(new Product(id: 1, title: "First", price: 37.99, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", image: "firstImg", inStock: true));
             listOfProducts.Add(new Product(id: 2, title: "Second", price: 37.99, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", image: "firstImg", inStock: true));
@@ -26,7 +26,7 @@ namespace ArtStoreBackend.Repositories
             listOfProducts.Add(new Product(id: 6, title: "Sixth", price: 37.99, description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.", image: "firstImg", inStock: true));
         }
 
-        public ProductRepository(List<Product> products)
+        public ProductsRepository(List<Product> products)
         {
             listOfProducts = products;
         }
