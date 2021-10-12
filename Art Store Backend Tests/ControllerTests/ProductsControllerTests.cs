@@ -3,8 +3,9 @@ using System.Net;
 using ArtStoreBackend.Controllers;
 using ArtStoreBackend.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using ArtStoreBackend.Models;
 
-namespace Art_Store_Backend_Tests
+namespace ArtStoreBackendTests
 {
     public class ProductsControllerTests
     {
@@ -19,18 +20,14 @@ namespace Art_Store_Backend_Tests
         }
 
         [Test]
-        public void Should_ReturnHTTPCode200_From_GetAllProductsMethod()
+        public void Should_ReturnHTTPCode200_When_GetAllProductsInvoked()
         {
-            ActionResult response = productsController.GetAllProducts().Result;
-            Assert.AreEqual(response, HttpStatusCode.OK);
+            //Had to convert the ActionResult to OkObjectResult to properly test the StatusCode result
+            OkObjectResult response = (OkObjectResult)productsController.GetAllProducts().Result;
+            Assert.AreEqual((int)HttpStatusCode.OK, response.StatusCode);
         }
         [Test]
-        public void Should_ReturnAllProductObjects_From_GetAllProductsMethod()
-        {
-            Assert.Pass();
-        }
-        [Test]
-        public void Should_x_When_x()
+        public void Should_ReturnAllProductObjects_When_GetAllProductsInvoked()
         {
             Assert.Pass();
         }

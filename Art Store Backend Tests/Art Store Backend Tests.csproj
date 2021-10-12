@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>Art_Store_Backend_Tests</RootNamespace>
+    <RootNamespace>ArtStoreBackendTests</RootNamespace>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
