@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>Art_Store_Backend_Tests</RootNamespace>
+    <RootNamespace>ArtStoreBackendTests</RootNamespace>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="RepositoryTests\" />
+    <ProjectReference Include="..\Art Store Api\Art Store Api.csproj" />
   </ItemGroup>
 
 </Project>
