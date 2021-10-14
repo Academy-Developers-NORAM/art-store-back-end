@@ -2,7 +2,7 @@ name: .NET
 
 on:
   push:
-    branches: [ main ]
+    branches: [ CL/BN_UpQD4xn1_test-coverage-tool ]
   pull_request:
     branches: [ main ]
 
@@ -27,3 +27,9 @@ jobs:
       
     - name: Test
       run: dotnet test --no-build --verbosity normal
+
+    - name: Coverlet tool collection
+      run: dotnet test--collect:"XPlat Code Coverage"
+
+    - name: Reportgenerator tool create badges
+      run: reportgenerator -reports:TestResults\*\coverage.cobertura.xml -targetdir:reports/badges -reporttypes:badges
