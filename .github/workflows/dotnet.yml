@@ -27,12 +27,9 @@ jobs:
       
     - name: Build
       run: dotnet build --no-restore
-      
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
 
-    - name: Coverlet tool collection
-      run: dotnet test --collect:"XPlat Code Coverage"
+    - name: Testing with Coverlet tool collection
+      run: dotnet test --no-build --collect:"XPlat Code Coverage"
 
     - name: Reportgenerator tool create badges
-      run: reportgenerator -reports:TestResults/*/coverage.cobertura.xml -targetdir:reports/badges -reporttypes:badges
+      run: reportgenerator -reports:"TestResults\*\coverage.cobertura.xml" -targetdir:"TestResults\badges" -reporttypes:badges
