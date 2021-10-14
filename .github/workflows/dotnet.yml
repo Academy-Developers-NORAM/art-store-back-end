@@ -42,6 +42,6 @@ jobs:
       
     - name: git commit
       run: |
-        git add '/home/runner/work/art-store-back-end/art-store-back-end/Art Store Backend Tests/TestResults/badges/badge_combined.svg'
+        git add 'TestResults/badges/badge_combined.svg'
         git commit -m "github actions: add test coverage badge"
         git push origin CL/BN_UpQD4xn1_test-coverage-tool
