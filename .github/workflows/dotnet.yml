@@ -33,7 +33,7 @@ jobs:
       run: dotnet test --no-build --collect:"XPlat Code Coverage"
 
     - name: Reportgenerator tool create badges
-      run: reportgenerator -reports:"/home/runner/work/art-store-back-end/art-store-back-end/Art Store Backend Tests/TestResults/*/coverage.cobertura.xml" -targetdir:"TestResults/badges" -reporttypes:badges
+      run: reportgenerator -reports:"/home/runner/work/art-store-back-end/art-store-back-end/Art Store Backend Tests/TestResults/*/coverage.cobertura.xml" -targetdir:"badges" -reporttypes:badges
 
     - name: setup git config
       run: |
@@ -42,6 +42,6 @@ jobs:
       
     - name: git commit
       run: |
-        git add 'TestResults/badges/badge_combined.svg'
+        git add 'badges/badge_combined.svg'
         git commit -m "github actions: add test coverage badge"
         git push origin CL/BN_UpQD4xn1_test-coverage-tool
