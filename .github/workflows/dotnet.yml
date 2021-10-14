@@ -43,5 +43,6 @@ jobs:
     - name: git commit
       run: |
         git add 'badges/badge_combined.svg'
-        git commit -m "github actions: add test coverage badge"
+        git commit -m "github actions: update test coverage badge"
         git push origin CL/BN_UpQD4xn1_test-coverage-tool
+      continue-on-error: true
