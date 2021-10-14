@@ -20,7 +20,7 @@ jobs:
         dotnet-version: 5.0.x
         
     - name: Install tools
-      run: dotnet tool install dotnet-reportgenerator-globaltool
+      run: dotnet tool install -g dotnet-reportgenerator-globaltool
       
     - name: Restore dependencies
       run: dotnet restore
