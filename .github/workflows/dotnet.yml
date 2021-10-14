@@ -32,4 +32,4 @@ jobs:
       run: dotnet test --no-build --collect:"XPlat Code Coverage"
 
     - name: Reportgenerator tool create badges
-      run: reportgenerator -reports:"TestResults\*\coverage.cobertura.xml" -targetdir:"TestResults\badges" -reporttypes:badges
+      run: reportgenerator -reports:"/home/runner/work/art-store-back-end/art-store-back-end/Art Store Backend Tests/TestResults/*/coverage.cobertura.xml" -targetdir:"TestResults/badges" -reporttypes:badges
