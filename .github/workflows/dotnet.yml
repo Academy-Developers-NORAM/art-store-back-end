@@ -2,9 +2,9 @@ name: .NET
 
 on:
   push:
-    branches: [ CL_qySew5JU_automating-builds ]
+    branches: [ main ]
   pull_request:
-    branches: [ CL_qySew5JU_automating-builds ]
+    branches: [ main ]
 
 jobs:
   build:
