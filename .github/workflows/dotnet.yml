@@ -2,7 +2,7 @@ name: .NET
 
 on:
   push:
-    branches: [ main ]
+    branches: [ CL/BN_UpQD4xn1_test-coverage-tool ]
   pull_request:
     branches: [ main ]
 
@@ -12,18 +12,37 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: checkout current branch
+      uses: actions/checkout@v2
     
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
         
+    - name: Install tools
+      run: dotnet tool install -g dotnet-reportgenerator-globaltool
+      
     - name: Restore dependencies
       run: dotnet restore
       
     - name: Build
       run: dotnet build --no-restore
+
+    - name: Testing with Coverlet tool collection
+      run: dotnet test --no-build --collect:"XPlat Code Coverage"
+
+    - name: Reportgenerator tool create badges
+      run: reportgenerator -reports:"/home/runner/work/art-store-back-end/art-store-back-end/Art Store Backend Tests/TestResults/*/coverage.cobertura.xml" -targetdir:"badges" -reporttypes:badges
+
+    - name: setup git config
+      run: |
+        git config user.name "Github Actions Bot"
+        git config user.email "<>"
       
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+    - name: git commit
+      run: |
+        git add 'badges/badge_combined.svg'
+        git commit -m "github actions: update test coverage badge"
+        git push origin CL/BN_UpQD4xn1_test-coverage-tool
+      continue-on-error: true
