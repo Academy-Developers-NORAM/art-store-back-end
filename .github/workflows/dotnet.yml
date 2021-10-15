@@ -1,10 +1,6 @@
 name: .NET
 
-on:
-  push:
-    branches: [ CL/BN_UpQD4xn1_test-coverage-tool ]
-  pull_request:
-    branches: [ main ]
+on: [push, pull_request]
 
 jobs:
   build:
