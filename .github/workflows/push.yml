@@ -1,6 +1,6 @@
-name: .NET
+name: Build, test, update files on all pushes
 
-on: [ push, pull_request ]
+on: [ push ]
 
 jobs:
   build:
