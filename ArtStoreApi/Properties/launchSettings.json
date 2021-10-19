@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Art_Store_Api": {
+    "ArtStoreApi": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,

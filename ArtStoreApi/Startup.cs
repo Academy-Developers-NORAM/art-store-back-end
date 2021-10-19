@@ -31,7 +31,7 @@ namespace ArtStoreBackend
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Art_Store_Backend", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "ArtStoreBackend", Version = "v1" });
             });
             services.AddSingleton<IProductsRepository, ProductsRepository>();
             services.AddCors(options =>
@@ -52,7 +52,7 @@ namespace ArtStoreBackend
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Art_Store_Backend v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ArtStoreBackend v1"));
             }
 
             app.UseHttpsRedirection();

@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Art_Store_Api
+namespace ArtStoreApi
 {
     public class Program
     {
