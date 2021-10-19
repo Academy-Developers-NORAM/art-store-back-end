@@ -21,12 +21,4 @@
   <ItemGroup>
     <ProjectReference Include="..\ArtStoreApi\ArtStoreApi.csproj" />
   </ItemGroup>
-
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="reportgenerator &quot;-reports:TestResults\*\*.xml&quot; &quot;-targetdir:..\badges&quot; &quot;-reporttypes:badges&quot;&#xD;&#xA;del ..\badges\badge_shieldsio*&#xD;&#xA;del ..\badges\badge_b*&#xD;&#xA;del ..\badges\badge_l*" />
-  </Target>
-
-  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-    <Exec Command="dotnet test --no-build --collect:&quot;XPlat Code Coverage&quot;" />
-  </Target>
 </Project>
