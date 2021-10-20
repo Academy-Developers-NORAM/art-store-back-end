@@ -3,4 +3,7 @@
 # Main branch code coverage
 ![Code Coverage](https://raw.githubusercontent.com/Academy-Developers-NORAM/art-store-back-end/main/reports/badge_combined.svg)
 
+Please run this command to install the ReportGenerator tool
+`dotnet tool install -g dotnet-reportgenerator-globaltool`
+
 Please run the "createReport.cmd" in the main directory to create the correct code coverage badge before commit
